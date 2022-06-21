@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E3F2FD;
+}
+
+.select-menu {
+  /* width만 주는 이유: div태그 특성 때문에 height는 안의 내용에 따라 알아서 바뀜 */
+  width: 300px;
+  margin: 150px auto;
+}
+
+.select-menu .select-btn {
+  display: flex;
+  height: 55px;
+  background-color: white;
+  padding: 20px;
+  font-size: 18px;
+  /* 400px로 쓴 이유: font를 가져올 때 400px도 추가했기 때문에 400 사용 가능 */
+  font-weight: 400px;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+
+.select-btn i {
+  font-size: 20px;
+  /* 바뀌기 전 애들한테 주는게 transition */
+  transition: 0.3s;
+}
+
+.select-menu.active .select-btn i {
+  /* 바뀐 후 애들한테는 transform을 줌 */
+  transform: rotate(-180deg);
+}
+
+.select-menu.active .options {
+  display: block;
+}
+
+
+.select-menu .options {
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  background-color: white;
+}
+
+.options .option:hover {
+  background-color: #F2F2F2;
+}
+
+.option i {
+  font-size: 25px;
+  margin-right: 12px;
+}
+
+.option text {
+  font-size: 18px;
+  color: #333;
+}
